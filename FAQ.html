@@ -1,0 +1,411 @@
+<html>
+
+  <head>
+
+<link rel="stylesheet" type="text/css" href="master.css">
+<link rel="stylesheet" type="text/css" href="slideshow.css">
+<link rel="stylesheet" type="text/css" href="slideshow-nav.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="slidepageout.css">
+
+
+
+       <script language="javascript">
+            col=555;
+            function fade() { document.getElementById("fade").style.color="rgb(" + col + "," + col + "," + col + ")"; 
+                               col-=5; if(col>0) setTimeout('fade()', 10); }
+        </script>
+
+
+       <script type="text/javascript">
+
+( function(){ // local scope
+
+	if (!document.querySelectorAll || !document.addEventListener)
+		return
+	var uls = document.querySelectorAll('div.css3splitmenu > ul'),
+			docbody = document.documentElement || document.body,
+			checkboxes = document.querySelectorAll('div.css3splitmenu > input[type="checkbox"]'),
+			zindexvalue = 100
+
+	for (var i=0; i<uls.length; i++){
+		( function(x){ // closure to capture each i value
+			checkboxes<i>.addEventListener('click', function(e){
+				uls[x].style.zIndex = ++zindexvalue
+				for (var y=0; y<uls.length; y++){ // loop through checkboxes other than current and uncheck them (since Chrome doesn't respond to onblur event on checkboxes)
+					if (y != x)
+						checkboxes[y].checked = false
+				}
+				e.cancelBubble = true
+			})
+			checkboxes<i>.addEventListener('blur', function(e){
+				setTimeout(function(), 100) // delay before menu closes, for Opera's sake (otherwise links are un-navigatable)
+				e.cancelBubble = true
+			})
+		}) (i)
+	}
+
+	docbody.addEventListener('click', function(e){
+		for (var i=0; i<uls.length; i++){
+			checkboxes<i>.checked = false
+		}
+	})
+
+})();</script>
+
+
+
+ <script src="jquery-1.8.1.min.js"></script>
+    <!-- custom javascript -->
+   <script src="custom.js" type="text/javascript"></script>
+
+ 
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+       <script src="jquery.scrollTo-1.4.3.1.js"></script>
+         <script src="jquery.localscroll-1.2.7.js"></script>
+
+
+
+            <script src="dmenu.js"></script>
+            <script src="data.js"></script>
+
+
+
+  </head>
+
+
+  <body onLoad="fade()">
+ 
+
+     
+
+    <div style="color:#0000FF" class="header">
+
+       <hr></hr>
+
+       <br></br>
+
+       <a style="position:absolute;top:25px;right:100px;"><form name="login">
+           Username<input type="text" name="userid"/>
+           Password<input type="password" name="pswrd"/>
+            <input type="button" onclick="check(this.form)" value="Login"/>
+            <input type="reset" value="Cancel"/>
+           </form></a>
+
+       <script language="javascript">
+              function check(form)/*function to check userid & password*/
+              {
+               /*the following code checkes whether the entered userid and password are matching*/
+               if(form.userid.value == "david" && form.pswrd.value == "david")
+              {
+                window.open('Resume.html')/*opens the target page while Id & password matches*/
+                  }
+              else
+              {
+                  alert("Error Password or Username")/*displays error message*/
+                   }
+              }
+             </script>
+
+
+
+       
+
+       <h1 style="position:absolute;top:30px;left:70px;">Ask David!!</h1>
+
+       <br></br>
+       <br></br>
+
+       
+
+       <hr style="color:#FF6666"></hr> 
+
+     </div>
+
+     <div style="color:#FF6666">
+
+       <table border="0" width="100%" background="overallbg.jpg">
+  	  <tr>
+
+		<td align="center" valign="center" cellpadding="5"><div>
+
+                 <ul id="blue-orange-menu">
+	<li class="istylei0"><a href="Main.html">Home</a></li>
+	<li class="istylei2"><a href="bio.html"><span>Biography</span></a></li>
+	
+	<li class="istylei2"><a href="Resume.html"><span>Resume</span></a>
+	
+	</li>
+	<li class="istylei1"><a href="Contact.html">Contact Me</a></li>
+        <li class="istylei1"><a href="FAQ.html">FAQ</a></li>
+</ul>
+<td width="45%"><p style = "font-family: brush script mt;
+       font-weight: 300; text-transform: uppercase; font-size:25px"><span id="fade">"If you don't think you look stupid, you can't go wrong."</span></p><td></tr>
+
+           
+ 
+	</table>
+
+       <hr></hr>
+
+
+
+
+
+
+    
+ 
+    </div>
+
+
+
+
+<div class="mainmenu">
+
+
+
+
+        <table border="2" width="100%" height="600px" class="body" id="fixedheight">
+  	  <tr>
+		<td align="center" valign="center" rowspan="6" width="75%">
+
+<font color="FFFFFF" size="4.5">
+
+             <p><b> <font color="FFFFFF" size="5">What is your favorite song of all time?</font></b></p>
+A: It’s probably a tie between Scheherazade by Rimsky-Korsakov, or Bad by Michael Jackson.
+
+<p><b><font color="FFFFFF" size="5">Wow! That’s a big leap in genre and style. Do you just listen to everything?</font></b></p>
+A: Well…yes. Actually, I only really started listening to songs written after 1950 during my junior year of high school. Before that, I was a pure orchestra geek. I’m still an orchestra geek, but I just don’t have time for orchestra ?.
+
+<p><b><font color="FFFFFF" size="5">How does this all reflect your interest in math/cs?</font></b></p>
+A: They say computer science is math in disguise, but then I’d say the same about music. At the end of day, both are about a search for patterns that bring answers, in one case, to how the universe may work, and the other, what pleases and stimulates are deepest emotions and desires. We are counting and evaluating in everything we do, and music and cs are no different. 
+
+<p><b><font color="FFFFFF" size="5">That’s deep. What made you pursue computer science at UIUC?</font></b></p>
+A: I was going to be math major, but changed my mind literally the day I sent in the application. Yes, the job prospects are good, but I’d like to think it is because I find greater joy in seeing my reasoning work itself out in a tangible way. 
+</font>
+
+
+<p><b><font color="FFFFFF" size="5">Why did the chicken cross the street?</font></b></p>
+<font color="FFFFFF" size="4.5"><b>Long Answer:</b> That would be a question of qualia. Since it is impossible to understand what consciousness means for anything other than ourself, nor communicate with 100% accuracy such matters anyways, I cannot be qualified to comment on the intent of the said chicken.
+<b>Short Answer:</b> I don't know. I'll ask Professor Zilles.
+</font></font>
+
+
+</td>
+
+
+		<td align="center" valign="center" height="100%">
+
+<div class="freshdesignweb">
+
+                <!-- start article 1 -->
+
+                <p><article class="border c-two" style="background-image:url(fillerfive.jpg)">
+
+                    <div style="opacity: 0;" class="fdw-background">
+
+                        <a href="bio.html" style="color:#fff;"><h4>Biography</h4></a>
+
+                        <div class="fdw-subtitle a-center">in <a href="#">Works</a></div>
+
+                        <p class="fdw-port">
+
+                            <a href="bio.html">Learn More<span class="vg-icon">*</span></a>
+
+                        </p>
+
+                    </div>
+
+                </article></p>
+
+                
+               
+
+ 
+
+            </div>    
+        
+    
+   </td>
+<tr><td align="center" valign="center" height="100%">
+
+<div class="freshdesignweb">
+
+                <!-- start article 1 -->
+
+                <p><article class="border c-two" style="background-image:url(fillersix.jpg)">
+
+                    <div style="opacity: 0;" class="fdw-background">
+
+                        <a href="Resume.html" style="color:#fff;"><h4>Resume</h4></a>
+
+                        <div class="fdw-subtitle a-center">in <a href="#">Works</a></div>
+
+                        <p class="fdw-port">
+
+                            <a href="Resume.html">Learn More<span class="vg-icon">*</span></a>
+
+                        </p>
+
+                    </div>
+
+                </article></p>
+
+                
+               
+
+ 
+
+            </div>    
+        
+    
+   </td></tr>
+
+
+<tr><td align="center" valign="center" height="100%">
+
+<div class="freshdesignweb">
+
+                <!-- start article 1 -->
+
+                <p><article class="border c-two" style="background-image:url(fillerseven.jpg)">
+
+                    <div style="opacity: 0;" class="fdw-background">
+
+                        <a href="Contact.html" style="color:#fff;"><h4>Contact Me!</h4></a>
+                        <div class="fdw-subtitle a-center">in <a href="#">Works</a></div>
+
+                        <p class="fdw-port">
+
+                            <a href="Contact.html">Learn More<span class="vg-icon">*</span></a>
+
+                        </p>
+
+                    </div>
+
+                </article></p>
+
+                
+               
+
+ 
+
+            </div>    
+        
+    
+   </td></tr>
+<tr><td align="center" valign="center" height="100%">
+
+<div class="freshdesignweb">
+
+                <!-- start article 1 -->
+
+                <p><article class="border c-two" style="background-image:url(fillereight.jpg)">
+
+                    <div style="opacity: 0;" class="fdw-background">
+
+                        <a href="FAQ.html" style="color:#fff;"><h4>FAQ</h4></a>
+                        <div class="fdw-subtitle a-center">in <a href="#">Works</a></div>
+
+                        <p class="fdw-port">
+
+                            <a href="FAQ.html">Learn More<span class="vg-icon">*</span></a>
+
+                        </p>
+
+                    </div>
+
+                </article></p>
+
+                
+               
+
+ 
+
+            </div>    
+        
+    
+   </td></tr>
+                
+            
+                
+          
+	                   
+ 
+	</table>
+
+	 
+         <hr></hr>
+
+
+    </div>
+     
+
+    <div class="archive">
+
+
+ 
+        <table width="100%" height="35%">
+  	  
+
+           <tr><td>
+
+<ul class="ch-grid">
+   <li>
+						<div class="ch-item ch-img-1">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-1"></div>
+									<div class="ch-info-back">
+										<a href="http://www.facebook.com"><h3>Follow me at Facebook</h3></a>
+										
+									</div>	
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+<li>
+						<div class="ch-item ch-img-1">				
+							<div class="ch-info-wrap">
+								<div class="ch-info">
+									<div class="ch-info-front ch-img-2"></div>
+									<div class="ch-info-back">
+										<a href="http://www.twitter.com"><h3>Follow me at Twitter</h3></a>
+										
+									</div>	
+								</div>
+							</div>
+						</div>
+					</li>
+
+
+</ul></td></tr>
+                
+
+                           
+
+	</table>
+
+	 <hr></hr>
+
+
+          <p align="center">1001 West Pennsylvania Avenue, Urbana, IL, 61801</p>
+
+	 
+         <hr></hr>
+
+
+    </div>
+
+     
+
+
+  </body>
+
+
+
+
+
+</html>
